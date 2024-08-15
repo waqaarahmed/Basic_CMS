@@ -16,4 +16,28 @@ def index():
     contents = Content.query.all()
     return render_template('index.html', contents=contents)
 
+@app.route('/create', methods=['GET', 'POST'])
+def create():
+    if request.method == 'POST':
+        title = request.form['title']
+        body = request.form['body']
+        content = Content(title=title, body=body)
+        db.session.add(content)
+        db.session.commit()
+        flash('Content created successfully!')
+        return redirect(url_for('index'))
+    return render_template('create.html')
+
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    content = Content.query.get_or_404(id)
+    if request.method == 'POST'):
+        content.title = request.form['title']
+        content.body = request.form['body']
+        db.session.commit()
+        flash('Content updated successfully!')
+        return redirect(url_for('index'))
+    return render_template('update.html', content=content)
+
+
 
