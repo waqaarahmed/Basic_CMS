@@ -39,5 +39,22 @@ def update(id):
         return redirect(url_for('index'))
     return render_template('update.html', content=content)
 
+@app.route('/delete/<int:id>')
+def delete(id):
+    content = Content.query.get_or_404(id)
+    db.session.delete(content)
+    db.session.commit()
+    flash('Content deleted successfully!')
+    return redirect(url_for('index'))
+
+@app.route('/detail/<int:id>')
+def detail(id):
+    content = Content.query.get_or_404(id)
+    return render_template('detail.html', content=content)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
 
 
