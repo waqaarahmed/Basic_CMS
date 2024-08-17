@@ -3,3 +3,12 @@ body {
     color: black;
     font-family: Arial, sans-serif;
 }
+
+
+.navbar {
+    background-color: #0056b3;
+}
+
+.navbar a {
+    color: white !important;
+}
