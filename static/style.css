@@ -28,3 +28,12 @@ body {
     background-color: #0056b3;
     border-color: #0056b3;
 }
+.btn-primary:hover {
+    background-color: #004085;
+    border-color: #004085;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
