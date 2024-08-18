@@ -7,3 +7,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="{{ url_for('index') }}">CMS</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('create') }}">Create</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
