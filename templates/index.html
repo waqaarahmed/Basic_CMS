@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Content List</h1>
+<ul class="list-group">
+    {% for content in contents %}
+    <li class="list-group-item">
+        <a href="{{ url_for('detail', id=content.id) }}">{{ content.title }}</a>
+        <span class="float-right">
+            <a href="{{ url_for('update', id=content.id) }}" class="btn btn-sm btn-warning">Edit</a>
+            <a href="{{ url_for('delete', id=content.id) }}" class="btn btn-sm btn-danger">Delete</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
