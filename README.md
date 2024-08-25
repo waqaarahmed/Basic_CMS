@@ -1,5 +1,5 @@
 
-# Flask CMS
+# Basic Flask CMS
 
 This project is a simple Content Management System (CMS) built with Python and Flask. It allows users to create, read, update, and delete content. The CMS is styled with a modern theme using white, blue, and black colors.
 
